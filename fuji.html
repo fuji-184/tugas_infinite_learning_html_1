@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+    <title>Fuji Web</title>
+    
+    <style>
+body {
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    padding: 0 auto;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: auto;
+}
+
+header {
+	display: flex;
+	height: auto;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	background-color: black;
+	width: 100%;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+}
+
+nav ul li {
+	padding-left: 15px;
+}
+
+main {
+	margin: 0 15px;
+}
+
+#about, #skill, #project-container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 15px 0;
+	position: fixed;
+	bottom: 0;
+	font-size: 17px;
+	font-weight: 450;
+	background: black;
+}
+
+a {
+	font-style: none;
+	color: lightblue;
+}
+
+#project-container {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	align-items: center;
+}
+
+#list-card-project {
+	display: grid;
+	grid-gap: 15px;
+}
+
+#list-card-project div {
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+}
+
+.card-project-thumbnail {
+	width: 100%;
+	border-radius: 5px 5px 0 0;
+}
+
+.card-project-header {
+	padding: 10px 15px;
+	margin: 0;
+	font-size: 26px;
+}
+
+.card-project-body {
+	padding: 0 15px;
+	font-size: 16px;
+}
+
+.card-project-footer {
+	padding: 10px 15px 15px 15px;
+	font-size: 12px;
+	text-align: right;
+}
+
+#loadMore {
+	margin: 15px 0 100px 0;
+	padding: 15px;
+	background-color: purple;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 17px;
+	font-weight: 450;
+}
+
+#hero {
+	background-image: radial-gradient(ellipse, #0000, #0007),
+        linear-gradient(0deg, #9725, #9725), url('https://drive.google.com/uc?export=view&id=1sfDs70Zq8yvsCvptyVDmu9kWjvZ6fnuD');
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	filter: blur(0.05em) saturate(0.7) contrast(1.5) brightness(1.2);
+	margin-top: 100px;
+}
+
+.identity {
+	background-color: rgba(10, 15, 87,0.5);
+	width: 100%;
+	height: 270px;
+}
+
+.detail-identity {
+	position: absolute;
+	left: 7%;
+	top: 7%;
+}
+
+#skill {
+	display: flex;
+	height: auto;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 15px 0;
+}
+
+.skill {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-gap: 15px;
+	width: 100%;
+}
+
+.skill div {
+	width: 100%;
+}
+
+.microsoft, .html, .css, .javascript, .php, .laravel {
+	width: 100%;
+	background-color: gray;
+	border-radius: 5px;
+}
+
+.microsoft div {
+	width: 82%;
+	background-color: #7cbb00;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+}
+
+.html div {
+	width: 90%;
+	background-color: purple;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+}
+
+.css div {
+	width: 82%;
+	background-color: #264de4;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+}
+
+.javascript div {
+	width: 82%;
+	background-color: #61dbfb;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+}
+
+.php div {
+	width: 82%;
+	background-color: #8993be;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+}
+
+.laravel div {
+	width: 82%;
+	background-color: indigo;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+}
+
+h3 {
+	font-size: 27px;
+}
+
+#about {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: auto;
+	align-items: center;
+}
+
+#backToTop {
+	padding: 15px;
+	border-radius: 100%;
+	position: fixed;
+	right: 15%;
+	bottom: 15%;
+	background-color: black;
+	color: white;
+	border: 1.5px solid white;
+	font-weight: 450px;
+}
+
+@media only screen and (max-width: 767px) {
+	#list-card-project {
+	grid-template-columns: auto;
+	#skill {
+		width: 100%;
+}
+}
+}
+
+@media only screen and (min-width: 768px) {
+	#list-card-project {
+	grid-template-columns: auto auto auto;
+	grid-gap: 15px;
+}
+    #skill {
+		width: 50%;
+}
+    </style>
+    
+  </head>
+  <body id="top">
+  	<header>
+  	<h1>Fuji Web</h1>
+  	<nav>
+          <ul>
+          	<a href="#about">
+          	    <li>About</li>
+              </a>
+              <a href="#contact">
+                  <li>Contact</li>
+              </a>
+              <a href="#project-container">
+                  <li>Project</li>
+              </a>
+          </ul>
+      </nav>
+      </header>
+      <main>
+      	<div id="hero">
+      	    <div class="identity">
+                  <div class="detail-identity">
+                  	Fuji
+                  </div>
+              </div>
+          </div>
+          <div id="about">
+          	<h3>About</h3>
+          	<div id="contact">Hello, perkenalkan nama saya Sri Fuji Santoso. Saya lahir di Klaten tanggal 30 Juni 2001. Selamat datang di website saya.</div>
+          </div>
+          <div id="skill">
+          	<h3>My Skills</h3>
+          	<div class="skill">
+          	<div>
+          	    <p>Microsoft Office</p>
+              <div class="microsoft">
+              	<div>86%</div>
+              </div>
+              </div>
+          	<div>
+          	    <p>HTML</p>
+              <div class="html">
+              	<div>90%</div>
+              </div>
+              </div>
+              <div>
+              	<p>CSS<p>
+              <div class="css">
+              	<div>82%</div>
+              </div>
+              </div>
+              <div>
+              	<p>JavaScript</p>
+              <div class="javascript">
+              	<div>70%</div>
+              </div>
+              </div>
+              <div>
+              	<p>PHP</p>
+              <div class="php">
+              	<div>80%</div>
+              </div>
+              </div>
+              <div>
+                  <p>Laravel</p>
+              <div class="laravel">
+              	<div>80%</div>
+              </div>
+              </div>
+              </div>
+          </div>
+      	<div id="project-container">
+      	<h3>My Projects</h3>
+      	<div id="list-card-project">
+      	
+          </div>
+      	    <button id="loadMore" onClick="projectList(startCardList)">Load More</button>
+          </div>
+      </main>
+      <footer>
+      	<span>
+Copyright @2023 | Created by <a href=""> Fuji</a>
+          </span>
+      </footer>
+      <a href="#top">
+      	<button id="backToTop">Top</button>
+      </a>
+      <script>
+      	let projects = [
+              {
+              	judul: "Contoh Project 1",
+                  img: "https://images.unsplash.com/photo-1676794944553-399cade9cd39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+                  isi: "Isi",
+                  kategori: "HTML",
+               },
+               {
+              	judul: "Contoh Project 2",
+                  img: "https://images.unsplash.com/photo-1676794944553-399cade9cd39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+                  isi: "Isi",
+                  kategori: "HTML",
+               },
+               {
+              	judul: "Contoh Project 3",
+                  img: "https://images.unsplash.com/photo-1676794944553-399cade9cd39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+                  isi: "Isi",
+                  kategori: "HTML",
+               },
+               {
+              	judul: "Contoh Project 4",
+                  img: "https://images.unsplash.com/photo-1676794944553-399cade9cd39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+                  isi: "Isi",
+                  kategori: "HTML",
+               },
+               {
+              	judul: "Contoh Project 5",
+                  img: "https://images.unsplash.com/photo-1676794944553-399cade9cd39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+                  isi: "Isi",
+                  kategori: "HTML",
+               },
+               {
+              	judul: "Contoh Project 6",
+                  img: "https://images.unsplash.com/photo-1676794944553-399cade9cd39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+                  isi: "Isi",
+                  kategori: "HTML",
+               },
+               
+];
+          
+      	let listCardProject = document.getElementById("list-card-project");
+          
+          let startCardList = 0;
+          let endCardList = 0;
+          let showCardAmount = 3;
+          
+          function projectList(showNumber){
+          
+          if (projects.length - showNumber >= showCardAmount){
+          	endCardList = showNumber + showCardAmount;
+}
+          else if (projects.length - showNumber > 0){
+          	endCardList = projects.length;
+}
+          else {
+          	return alert("Semua Project Telah Ditampilkan");
+}
+          
+          
+          for (let i=showNumber; i<endCardList; i++){
+          	
+              let project = document.createElement("div");
+              project.innerHTML = `
+              <img class="card-project-thumbnail" src="${projects[i].img}"/>
+                   <h2 class="card-project-header">
+                   	${projects[i].judul}
+                   </h2>
+                   <div class="card-project-body">
+                   	${projects[i].isi}
+                   </div>
+                   <div class="card-project-footer">
+                   	${projects[i].kategori}
+                   </div>
+`;
+              listCardProject.appendChild(project);
+              
+}
+          startCardList += showCardAmount;
+}
+
+          window.onload(projectList(startCardList));
+          
+          
+          
+      </script>
+      
+  </body>
+</html>
